@@ -1,0 +1,100 @@
+// ** Btn Styles 
+.btn {
+    border-radius: 8px;
+
+    &.btn-default {
+        background-color: $Brand-primary-color;
+        color: $White-color;
+        &:hover{
+            transition: background-color 0.5s ease;
+            background-color : #061F35;
+        }
+        &:disabled {
+            transition: background-color 0.5s ease;
+            background-color : #E0E0E0;
+            cursor: not-allowed;
+        }
+        &.active{
+            transition: background-color 0.5s ease;
+            background-color : #526B81;
+        }
+    }
+
+    &.btn-icon-text{
+        @include flex(center,null,null,null);
+        @extend .btn-default;
+        .btn-icon{
+            margin-right: $spacing-16;
+        }
+    }
+
+    &.btn-outline {
+        border: 2px solid $Brand-primary-color;
+        color: $Grey-color-1;
+        &:hover{
+                background-color: #CED5DB;
+                transition: background-color 0.5s ease;
+        }
+        &:disabled {
+            transition: background-color 0.5s ease;
+            border-color: $Grey-color-4;
+            border-width: 1px;
+            color: $Grey-color-5;
+            cursor: not-allowed;
+        }
+        &.active{
+            transition: background-color 0.5s ease;
+            background-color : #9DABB7;
+            border-color: #526B81;
+        }
+    }
+
+}
+
+
+.btn-small {
+    @extend .btn;
+    @include Small-text-bold;
+    padding: 14px 70px;
+}
+
+.btn-normal{
+    @extend .btn;
+    @include Normal-text-bold;
+    padding: 16px 80px;
+}
+
+.btn-medium{
+    @extend .btn;
+    @include Medium-text-bold;
+    padding: 18px 90px;
+}
+
+.btn-large {
+    @extend .btn;
+    @include Large-text-bold;
+    padding: 20px 100px;
+}
+
+
+// ** Btn-icon-circle Styles 
+.btn-icon-circle{
+    @include flex(center,center,null,null);
+    border-radius: 50%;
+    padding: $spacing-16;
+    background-color: $Brand-primary-color;
+    &:hover{
+        transition: background-color 0.5s ease;
+        background-color : #061F35;
+    }
+    &:disabled {
+        transition: background-color 0.5s ease;
+        background-color : #E0E0E0;
+        cursor: not-allowed;
+    }
+    &.active{
+        transition: background-color 0.5s ease;
+        background-color : #526B81;
+    }
+
+}

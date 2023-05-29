@@ -1,0 +1,118 @@
+// ** Mobile Details
+$Mobile-media-query : 320px;
+$Mobile-number-of-columns : 2;
+$Mobile-column-width : 130px + 30;
+$Mobile-gutter-size : 30px / 2;
+$Mobile-class-name : "col-mobile";
+
+// ** Tablet Details
+$Tablet-media-query : 768px;
+$Tablet-number-of-columns : 6;
+$Tablet-column-width : 88px + 30;
+$Tablet-gutter-size : 30px / 2;
+$Tablet-class-name : "col-tablet";
+
+
+// ** Desktop Details
+$Desktop-media-query : 1024px;
+$Desktop-number-of-columns : 12;
+$Desktop-column-width : 50px + 30;
+$Desktop-gutter-size : 30px / 2;
+$Desktop-class-name : "col-desktop";
+
+// ** DesktopHD Details
+$DesktopHD-media-query : 1440px;
+$DesktopHD-number-of-columns : 12;
+$DesktopHD-column-width : 65px + 30;
+$DesktopHD-gutter-size : 30px / 2;
+$DesktopHD-class-name : "col-desktopHD";
+
+
+// ** Setting up All Media-queries
+
+.container{
+    margin: 0 auto;
+}
+
+.row{
+    @include flex(null,null,wrap,null);
+}
+
+
+// ** Mobile
+@media (min-width : $Mobile-media-query) {
+
+    @for $index from 1 through $Mobile-number-of-columns {
+        .#{$Mobile-class-name}-#{$index} {
+            width: $Mobile-column-width * $index;
+        }
+    }
+
+    [class ^=#{$Mobile-class-name}] {
+        padding: 0 $Mobile-gutter-size ;
+    }
+
+    .container {
+        max-width: 320px;
+    }
+
+}
+
+// ** Tablet
+@media (min-width : $Tablet-media-query) {
+
+    @for $index from 1 through $Tablet-number-of-columns {
+        .#{$Tablet-class-name}-#{$index} {
+            width: $Tablet-column-width * $index;
+        }
+    }
+
+    [class ^=#{$Tablet-class-name}] {
+        padding: 0 $Tablet-gutter-size ;
+    }
+
+    .container {
+        max-width: 708px;
+    }
+
+}
+
+
+// ** Desktop
+@media (min-width : $Desktop-media-query) {
+
+    @for $index from 1 through $Desktop-number-of-columns {
+        .#{$Desktop-class-name}-#{$index} {
+            width: $Desktop-column-width * $index;
+        }
+    }
+
+    [class ^=#{$Desktop-class-name}] {
+        padding: 0 $Desktop-gutter-size ;
+    }
+
+    .container {
+        max-width: 960px;
+    }
+
+}
+
+
+// ** DesktopHD
+@media (min-width : $DesktopHD-media-query) {
+
+    @for $index from 1 through $DesktopHD-number-of-columns {
+        .#{$DesktopHD-class-name}-#{$index} {
+            width: $DesktopHD-column-width * $index;
+        }
+    }
+
+    [class ^=#{$DesktopHD-class-name}] {
+        padding: 0 $DesktopHD-gutter-size ;
+    }
+
+    .container {
+        max-width: 1140px;
+    }
+
+}

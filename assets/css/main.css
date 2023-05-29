@@ -1,0 +1,815 @@
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+2. Remove default margin
+*/
+* {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+svg rect {
+  fill: none;
+}
+
+/*
+6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 320px) {
+  .col-mobile-1 {
+    width: 160px;
+  }
+  .col-mobile-2 {
+    width: 320px;
+  }
+  [class^=col-mobile] {
+    padding: 0 15px;
+  }
+  .container {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-tablet-1 {
+    width: 118px;
+  }
+  .col-tablet-2 {
+    width: 236px;
+  }
+  .col-tablet-3 {
+    width: 354px;
+  }
+  .col-tablet-4 {
+    width: 472px;
+  }
+  .col-tablet-5 {
+    width: 590px;
+  }
+  .col-tablet-6 {
+    width: 708px;
+  }
+  [class^=col-tablet] {
+    padding: 0 15px;
+  }
+  .container {
+    max-width: 708px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .col-desktop-1 {
+    width: 80px;
+  }
+  .col-desktop-2 {
+    width: 160px;
+  }
+  .col-desktop-3 {
+    width: 240px;
+  }
+  .col-desktop-4 {
+    width: 320px;
+  }
+  .col-desktop-5 {
+    width: 400px;
+  }
+  .col-desktop-6 {
+    width: 480px;
+  }
+  .col-desktop-7 {
+    width: 560px;
+  }
+  .col-desktop-8 {
+    width: 640px;
+  }
+  .col-desktop-9 {
+    width: 720px;
+  }
+  .col-desktop-10 {
+    width: 800px;
+  }
+  .col-desktop-11 {
+    width: 880px;
+  }
+  .col-desktop-12 {
+    width: 960px;
+  }
+  [class^=col-desktop] {
+    padding: 0 15px;
+  }
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .col-desktopHD-1 {
+    width: 95px;
+  }
+  .col-desktopHD-2 {
+    width: 190px;
+  }
+  .col-desktopHD-3 {
+    width: 285px;
+  }
+  .col-desktopHD-4 {
+    width: 380px;
+  }
+  .col-desktopHD-5 {
+    width: 475px;
+  }
+  .col-desktopHD-6 {
+    width: 570px;
+  }
+  .col-desktopHD-7 {
+    width: 665px;
+  }
+  .col-desktopHD-8 {
+    width: 760px;
+  }
+  .col-desktopHD-9 {
+    width: 855px;
+  }
+  .col-desktopHD-10 {
+    width: 950px;
+  }
+  .col-desktopHD-11 {
+    width: 1045px;
+  }
+  .col-desktopHD-12 {
+    width: 1140px;
+  }
+  [class^=col-desktopHD] {
+    padding: 0 15px;
+  }
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.input-group label {
+  font-family: "Inter-Bold";
+  font-size: 18px;
+  line-height: 25.2px;
+  margin-bottom: 8px;
+}
+
+.input-group .input-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #BDBDBD;
+  border-radius: 4px;
+  padding: 16px 24px;
+}
+
+.input-group .input-content input {
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 22.4px;
+  background: none;
+  color: #4F4F4F;
+  width: 80%;
+}
+
+.input-group .input-status {
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 22.4px;
+  margin-top: 8px;
+  color: #BDBDBD;
+}
+
+.input-error-status .input-content {
+  border-color: #EB5757;
+}
+
+.input-error-status .input-status {
+  color: #EB5757;
+}
+
+.input-success-status .input-content {
+  border-color: #27AE60;
+}
+
+.input-success-status .input-status {
+  color: #27AE60;
+}
+
+.input-warning-status .input-content {
+  border-color: #E2B93B;
+}
+
+.input-warning-status .input-status {
+  color: #E2B93B;
+}
+
+.textarea-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.textarea-group label {
+  font-family: "Inter-Bold";
+  font-size: 18px;
+  line-height: 25.2px;
+  margin-bottom: 8px;
+}
+
+.textarea-group textarea {
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #4F4F4F;
+  border-radius: 4px;
+  border: 1px solid #E0E0E0;
+  padding: 16px 24px;
+}
+
+.btn, .btn-small, .btn-normal, .btn-medium, .btn-large {
+  border-radius: 8px;
+}
+
+.btn.btn-default, .btn.btn-icon-text, .btn-icon-text.btn-small, .btn-icon-text.btn-normal, .btn-icon-text.btn-medium, .btn-icon-text.btn-large, .btn-default.btn-small, .btn-default.btn-normal, .btn-default.btn-medium, .btn-default.btn-large {
+  background-color: #092C4C;
+  color: #FFFFFF;
+}
+
+.btn.btn-default:hover, .btn.btn-icon-text:hover, .btn-icon-text.btn-small:hover, .btn-icon-text.btn-normal:hover, .btn-icon-text.btn-medium:hover, .btn-icon-text.btn-large:hover, .btn-default.btn-small:hover, .btn-default.btn-normal:hover, .btn-default.btn-medium:hover, .btn-default.btn-large:hover {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  background-color: #061F35;
+}
+
+.btn.btn-default:disabled, .btn.btn-icon-text:disabled, .btn-icon-text.btn-small:disabled, .btn-icon-text.btn-normal:disabled, .btn-icon-text.btn-medium:disabled, .btn-icon-text.btn-large:disabled, .btn-default.btn-small:disabled, .btn-default.btn-normal:disabled, .btn-default.btn-medium:disabled, .btn-default.btn-large:disabled {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  background-color: #E0E0E0;
+  cursor: not-allowed;
+}
+
+.btn.btn-default.active, .btn.active.btn-icon-text, .active.btn-icon-text.btn-small, .active.btn-icon-text.btn-normal, .active.btn-icon-text.btn-medium, .active.btn-icon-text.btn-large, .btn-default.active.btn-small, .btn-default.active.btn-normal, .btn-default.active.btn-medium, .btn-default.active.btn-large {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  background-color: #526B81;
+}
+
+.btn.btn-icon-text, .btn-icon-text.btn-small, .btn-icon-text.btn-normal, .btn-icon-text.btn-medium, .btn-icon-text.btn-large {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn.btn-icon-text .btn-icon, .btn-icon-text.btn-small .btn-icon, .btn-icon-text.btn-normal .btn-icon, .btn-icon-text.btn-medium .btn-icon, .btn-icon-text.btn-large .btn-icon {
+  margin-right: 16px;
+}
+
+.btn.btn-outline, .btn-outline.btn-small, .btn-outline.btn-normal, .btn-outline.btn-medium, .btn-outline.btn-large {
+  border: 2px solid #092C4C;
+  color: #333333;
+}
+
+.btn.btn-outline:hover, .btn-outline.btn-small:hover, .btn-outline.btn-normal:hover, .btn-outline.btn-medium:hover, .btn-outline.btn-large:hover {
+  background-color: #CED5DB;
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+.btn.btn-outline:disabled, .btn-outline.btn-small:disabled, .btn-outline.btn-normal:disabled, .btn-outline.btn-medium:disabled, .btn-outline.btn-large:disabled {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  border-color: #BDBDBD;
+  border-width: 1px;
+  color: #E0E0E0;
+  cursor: not-allowed;
+}
+
+.btn.btn-outline.active, .btn-outline.active.btn-small, .btn-outline.active.btn-normal, .btn-outline.active.btn-medium, .btn-outline.active.btn-large {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  background-color: #9DABB7;
+  border-color: #526B81;
+}
+
+.btn-small {
+  font-family: "Inter-Bold";
+  font-size: 14px;
+  line-height: 19.6px;
+  padding: 14px 70px;
+}
+
+.btn-normal {
+  font-family: "Inter-Bold";
+  font-size: 18px;
+  line-height: 25.2px;
+  padding: 16px 80px;
+}
+
+.btn-medium {
+  font-family: "Inter-Bold";
+  font-size: 18px;
+  line-height: 25.2px;
+  padding: 18px 90px;
+}
+
+.btn-large {
+  font-family: "Inter-Bold";
+  font-size: 20px;
+  line-height: 28px;
+  padding: 20px 100px;
+}
+
+.btn-icon-circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  padding: 16px;
+  background-color: #092C4C;
+}
+
+.btn-icon-circle:hover {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  background-color: #061F35;
+}
+
+.btn-icon-circle:disabled {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  background-color: #E0E0E0;
+  cursor: not-allowed;
+}
+
+.btn-icon-circle.active {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  background-color: #526B81;
+}
+
+.toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 44px;
+  padding: 2px;
+  background-color: #E0E0E0;
+  border-radius: 20px;
+}
+
+.toggle .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.toggle.active {
+  background-color: #092C4C;
+}
+
+.toggle.active .circle {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+}
+
+.radio-button input {
+  display: none;
+}
+
+.radio-button label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.radio-button label .radio-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid #828282;
+  cursor: pointer;
+}
+
+.radio-button label .radio-title {
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 22.4px;
+  margin-left: 16px;
+  color: #4F4F4F;
+}
+
+.radio-button.active .radio-status {
+  border-color: #092C4C;
+}
+
+.radio-button.active .radio-status .radio-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #092C4C;
+}
+
+.radio-button.disabled .radio-title {
+  color: #BDBDBD;
+}
+
+.radio-button.disabled .radio-status {
+  border-color: #BDBDBD;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkbox label .checkbox-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid #828282;
+}
+
+.checkbox label .checkbox-status .checkbox-icon {
+  display: none;
+}
+
+.checkbox label .checkbox-title {
+  margin-left: 16px;
+  color: #4F4F4F;
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+.checkbox.active .checkbox-status {
+  border: none;
+  background-color: #092C4C;
+}
+
+.checkbox.active .checkbox-status .checkbox-icon {
+  display: block;
+}
+
+.checkbox.disabled .checkbox-title {
+  color: #BDBDBD;
+}
+
+.checkbox.disabled .checkbox-status {
+  cursor: not-allowed;
+  border-color: #BDBDBD;
+}
+
+.dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dropdown.active .dropdown-items {
+  display: block;
+}
+
+.dropdown .dropdown-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 16px 24px;
+  border-radius: 4px;
+  border: 1px solid #BDBDBD;
+}
+
+.dropdown .dropdown-content .dropdown-icon {
+  cursor: pointer;
+}
+
+.dropdown .dropdown-content .dropdown-title {
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #4F4F4F;
+}
+
+.dropdown .dropdown-items {
+  display: none;
+  margin-top: 8px;
+  border: 1px solid #BDBDBD;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+}
+
+.dropdown .dropdown-items .dropdown-item {
+  padding: 16px 24px;
+}
+
+.dropdown .dropdown-items .dropdown-item.active {
+  background-color: #092C4C;
+}
+
+.dropdown .dropdown-items .dropdown-item.active .dropdown-item--title {
+  color: #FFFFFF;
+}
+
+.dropdown .dropdown-items .dropdown-item .dropdown-item--title {
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #4F4F4F;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination .pagination-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Inter-Bold";
+  font-size: 14px;
+  line-height: 19.6px;
+  border-radius: 4px;
+  color: #828282;
+  border: 1px solid #828282;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.pagination .pagination-item:not(:first-child) {
+  margin-left: 8px;
+}
+
+.pagination .pagination-item.active {
+  color: #FFFFFF;
+  background-color: #092C4C;
+}
+
+.breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.breadcrumb .breadcrumb-icon {
+  margin-right: 16px;
+}
+
+.breadcrumb .breadcrumb-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.breadcrumb .breadcrumb-item .breadcrumb-item--title {
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  line-height: 22.4px;
+  color: #828282;
+}
+
+.breadcrumb .breadcrumb-item .breadcrumb-item--title:last-child {
+  color: #092C4C;
+}
+
+.breadcrumb .breadcrumb-item .breadcrumb-item--icon {
+  margin: 0 8px;
+}
+
+body {
+  background-color: #092C4C;
+}
+
+h4 {
+  font-family: "Inter-Bold";
+  font-size: 32px;
+  line-height: 35.2px;
+  margin-top: 64px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.layout {
+  margin-top: 90px;
+}
+
+.layout .item {
+  font-family: "Inter-Bold";
+  font-size: 24px;
+  line-height: 26.4px;
+  padding: 32px 0;
+  background-color: #F2994A;
+  text-align: center;
+  border-radius: 16px;
+  margin-top: 30px;
+}
+/*# sourceMappingURL=main.css.map */

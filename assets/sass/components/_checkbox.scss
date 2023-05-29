@@ -1,0 +1,45 @@
+.checkbox {
+    input {
+        display: none;
+    }
+
+    label {
+        @include flex(center, null, null, null);
+        .checkbox-status{
+            @include flex(center,center,null,null);
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid $Grey-color-3;
+            .checkbox-icon{
+                display: none;
+            }
+        }
+        .checkbox-title{
+            margin-left: 16px;
+            color: $Grey-color-2;
+            @include Normal-text-regular;
+        }
+    }
+
+    &.active{
+        .checkbox-status{
+            border: none;
+            background-color: $Brand-primary-color;
+            .checkbox-icon{
+                display: block;
+            }
+        }
+    }
+
+    &.disabled{
+        .checkbox-title{
+            color: $Grey-color-4;
+        }
+        .checkbox-status{
+            cursor: not-allowed;
+            border-color: $Grey-color-4;
+        }
+    }
+}

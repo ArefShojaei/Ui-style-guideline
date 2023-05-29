@@ -1,0 +1,30 @@
+$Inter-bold : 'Inter-Bold';
+$Inter-semiBold : 'Inter-SemiBold';
+$Inter-regular : 'Inter-Regular';
+
+
+// ** You can choose one of these varilables for setting new directory **
+
+    // This url is for main.css file without minifyed the file
+    $Url : '../fonts';
+    // This url is for main.min.css file with minifyed the file
+    $Url-2 : '../../fonts';
+
+//  ************************************************************************
+
+$Format : "woff2";
+
+@font-face {
+    font-family: $Inter-bold;
+    src: url('#{$Url}/#{$Inter-bold}.#{$Format}') format($Format);
+}
+
+@font-face {
+    font-family: $Inter-semiBold;
+    src: url('#{$Url}/#{$Inter-semiBold}.#{$Format}') format($Format);
+}
+
+@font-face {
+    font-family: $Inter-regular;
+    src: url('#{$Url}/#{$Inter-regular}.#{$Format}') format($Format);
+}

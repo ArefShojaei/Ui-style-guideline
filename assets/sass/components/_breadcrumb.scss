@@ -1,0 +1,21 @@
+.breadcrumb{
+    @include flex(center,null,null,null);
+
+    .breadcrumb-icon{
+        margin-right: $spacing-16
+    }
+
+    .breadcrumb-item{
+        @include flex(center,null,null,null);
+        .breadcrumb-item--title{
+            @include Normal-text-regular;
+            color: $Grey-color-3;
+            &:last-child{
+                color: $Brand-primary-color;
+            }
+        }
+        .breadcrumb-item--icon{
+            margin: 0 $spacing-8;
+        }
+    }
+}

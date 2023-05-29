@@ -1,0 +1,46 @@
+.dropdown{
+    @include flex(stretch,null,null,column);
+
+    &.active{
+        .dropdown-items{
+            display: block
+        }
+    }
+
+    .dropdown-content{
+        @include flex(center,space-between,null,null);
+        padding: $spacing-16 $spacing-24;
+        border-radius: 4px;
+        border: 1px solid $Grey-color-4;
+        .dropdown-icon{
+            cursor: pointer
+        }
+        .dropdown-title{
+            @include Normal-text-regular;
+            color: $Grey-color-2;
+        }
+    }
+
+    .dropdown-items{
+        display: none;
+        margin-top: $spacing-8;
+        border: 1px solid $Grey-color-4;
+        background-color: $White-color;
+        border-radius: 4px;
+        .dropdown-item{
+
+            &.active{
+                background-color: $Brand-primary-color;
+                .dropdown-item--title{
+                    color: $White-color;
+                }
+            }
+
+            padding: $spacing-16 $spacing-24;
+            .dropdown-item--title{
+                @include Normal-text-regular;
+                color: $Grey-color-2;
+            }
+        }
+    }
+}

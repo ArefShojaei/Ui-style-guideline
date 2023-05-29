@@ -1,0 +1,21 @@
+.toggle {
+    @include flex(center, null, null, null);
+    width: 44px;
+    padding: 2px;
+    background-color: $Grey-color-5;
+    border-radius: 20px;
+    .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $White-color;
+        cursor: pointer;
+        transition: all .5s ease;
+    }
+    &.active{
+        background-color: $Brand-primary-color;
+        .circle{
+            transform: translateX(20px);
+        }
+    }
+}

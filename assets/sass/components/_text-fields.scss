@@ -1,0 +1,77 @@
+// ** Input Styles
+.input-group{
+    @include flex(flex-start,null,null,column);
+
+    label{
+        @include Normal-text-bold;
+        margin-bottom: $spacing-8;
+    }
+
+    .input-content{
+        @include flex(center,space-between,null,null);
+        border: 1px solid $Grey-color-4;
+        border-radius: 4px;
+        padding: $spacing-16 $spacing-24;
+
+        input {
+            @include Normal-text-regular;
+            background: none;
+            color: $Grey-color-2;
+            width: 80%
+        }
+    }
+
+    .input-status{
+        @include Small-text-regular;
+        margin-top: $spacing-8;
+        color: $Grey-color-4;
+    }
+}
+
+
+// ** Input Statuses
+.input-error-status {
+    .input-content {
+        border-color: $State-error-color;
+    }
+    .input-status{
+        color: $State-error-color;
+    }
+}
+
+.input-success-status {
+    .input-content {
+        border-color: $State-success-color;
+    }
+    .input-status{
+        color: $State-success-color;
+    }
+}
+
+.input-warning-status {
+    .input-content {
+        border-color: $State-warning-color;
+    }
+    .input-status{
+        color: $State-warning-color;
+    }
+}
+
+
+// ** Textarea Styles
+.textarea-group{
+    @include flex(flex-start,null,null,column);
+
+    label{
+        @include Normal-text-bold;
+        margin-bottom: $spacing-8;
+    }
+
+    textarea{
+        @include Normal-text-regular;
+        color: $Grey-color-2;
+        border-radius: 4px;
+        border: 1px solid $Grey-color-5;
+        padding: $spacing-16 $spacing-24;
+    }
+}

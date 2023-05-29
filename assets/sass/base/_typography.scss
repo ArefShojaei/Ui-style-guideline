@@ -1,0 +1,58 @@
+// ** Heading Styles
+@mixin h1{
+    @include font($Inter-bold, 56px, 61.6px);
+}
+
+@mixin h2{
+    @include font($Inter-bold, 48px, 52.8px);
+}
+
+@mixin h3{
+    @include font($Inter-bold, 40px, 44px);
+}
+
+@mixin h4{
+    @include font($Inter-bold, 32px, 35.2px);
+}
+
+@mixin h5{
+    @include font($Inter-bold, 24px, 26.4px);
+}
+
+@mixin h6{
+    @include font($Inter-semiBold, 20px, 22px);
+}
+
+
+// ** Text Styles
+@mixin Large-text-bold {
+    @include font($Inter-bold, 20px, 28px);
+}
+
+@mixin Large-text-regular {
+    @include font($Inter-regular, 20px, 28px);
+}
+
+@mixin Medium-text-bold {
+    @include font($Inter-bold, 18px, 25.2px);
+}
+
+@mixin Medium-text-regular {
+    @include font($Inter-regular, 18px, 25.2px);
+}
+
+@mixin Normal-text-bold {
+    @include font($Inter-bold, 18px, 25.2px);
+}
+
+@mixin Normal-text-regular {
+    @include font($Inter-regular, 16px, 22.4px);
+}
+
+@mixin Small-text-bold {
+    @include font($Inter-bold, 14px, 19.6px);
+}
+
+@mixin Small-text-regular {
+    @include font($Inter-regular, 16px, 22.4px);
+}

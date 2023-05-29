@@ -1,0 +1,43 @@
+.radio-button{
+    input{
+        display: none;
+    }
+    label{
+        @include flex(center,null,null,null);
+        .radio-status{
+            @include flex(center,center,null,null);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 3px solid $Grey-color-3;
+            cursor: pointer;
+        }
+        .radio-title{
+            @include Normal-text-regular;
+            margin-left: $spacing-16;
+            color: $Grey-color-2;
+        }
+    }
+
+    &.active{
+        .radio-status{
+            border-color: $Brand-primary-color;
+            .radio-icon{
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background-color: $Brand-primary-color;
+            }
+        }
+    }
+
+    &.disabled{
+        .radio-title{
+            color: $Grey-color-4;
+        }
+        .radio-status{
+            border-color: $Grey-color-4;
+        }
+    }
+
+}
